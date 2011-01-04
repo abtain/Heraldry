@@ -1,0 +1,110 @@
+#!/usr/bin/env python
+import sys
+
+test_modules = [
+    'cryptutil',
+    'storetest',
+    'oidutil',
+    'dh',
+    ]
+
+def fixpath():
+    import os.path
+    try:
+        d = os.path.dirname(__file__)
+    except NameError:
+        d = os.path.dirname(sys.argv[0])
+    parent = os.path.normpath(os.path.join(d, '..'))
+    if parent not in sys.path:
+        print "putting %s in sys.path" % (parent,)
+        sys.path.insert(0, parent)
+
+def otherTests():
+    failed = []
+    for module_name in test_modules:
+        print 'Testing %s...' % (module_name,) ,
+        sys.stdout.flush()
+        module_name = 'openid.test.' + module_name
+        try:
+            test_mod = __import__(module_name, {}, {}, [None])
+        except ImportError:
+            print 'Failed to import test %r' % (module_name,)
+            failed.append(module_name)
+        else:
+            try:
+                test_mod.test()
+            except (SystemExit, KeyboardInterrupt):
+                raise
+            except:
+                sys.excepthook(*sys.exc_info())
+                failed.append(module_name)
+            else:
+                print 'Succeeded.'
+
+
+    return failed
+
+def pyunitTests():
+    import unittest
+    from openid.test import test_htmldiscover
+    from openid.test import test_openidyadis
+    from openid.test import test_discover
+    from openid.test import consumer
+    from openid.test import kvform
+    from openid.test import server
+    from openid.test import oidutil
+    from openid.test import linkparse
+    from openid.test import trustroot
+    from openid.test import association
+
+    pyunit_modules = [
+        server,
+        consumer,
+        association,
+        ]
+
+    # Some modules have data-driven tests, and they use custom methods
+    # to build the test suite:
+    custom_modules = [
+        oidutil,
+        linkparse,
+        trustroot,
+        test_openidyadis,
+        test_discover,
+        test_htmldiscover,
+        kvform,
+        ]
+
+    loader = unittest.TestLoader()
+    s = unittest.TestSuite()
+
+    for m in pyunit_modules:
+        s.addTest(loader.loadTestsFromModule(m))
+
+    for m in custom_modules:
+        s.addTest(m.pyUnitTests())
+
+    runner = unittest.TextTestRunner() # verbosity=2)
+
+    return runner.run(s)
+
+
+try:
+    bool
+except NameError:
+    def bool(x):
+        return not not x
+
+def main():
+    fixpath()
+    other_failed = otherTests()
+    pyunit_result = pyunitTests()
+
+    if other_failed:
+        print 'Failures:', ', '.join(other_failed)
+
+    failed = bool(other_failed) or bool(not pyunit_result.wasSuccessful())
+    return failed
+
+if __name__ == '__main__':
+    sys.exit(main() and 1 or 0)

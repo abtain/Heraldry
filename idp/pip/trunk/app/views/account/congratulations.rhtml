@@ -1,0 +1,65 @@
+<% # Licensed to the Apache Software Foundation (ASF) under one
+   # or more contributor license agreements.  See the NOTICE file
+   # distributed with this work for additional information
+   # regarding copyright ownership.  The ASF licenses this file
+   # to you under the Apache License, Version 2.0 (the
+   # "License"); you may not use this file except in compliance
+   # with the License.  You may obtain a copy of the License at
+   # 
+   #   http://www.apache.org/licenses/LICENSE-2.0
+   # 
+   # Unless required by applicable law or agreed to in writing,
+   # software distributed under the License is distributed on an
+   # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   # KIND, either express or implied.  See the License for the
+   # specific language governing permissions and limitations
+   # under the License. %>
+
+<div class="page-head">
+  <div id="pagebody-idimage"><%= current_avatar %></div>
+  <h1 class="pagebody">Congratulations!</h1>
+  <br style='clear:both' />  
+</div>
+
+<div class="gradient_arch" style="background: url(/images/gradient_arch.gif) no-repeat top left; min-height: 70px">
+  <br /><br />
+
+  <h2 class="pagebody" style="margin: 0 0 0 40px;">You have successfully created your Personal Identity.</h2><br />
+  <h3 class="pagebody">Next Steps</h3>
+
+  <div id="steps">
+    <div id="step1">
+      <div class="steps-title">1. Choose your ID<br /> Image</div><br />
+      <p>
+        A personal &quot;ID Image&quot; ensures that all Trust Requests are taking place on your Identity URL.
+        <% if logged_in? && current_user.avatar -%>
+        You can update your own image:
+        <% else -%>
+        You can choose to upload your own image:
+        <% end -%>
+      </p>
+
+      <% form_for :user, current_user, :url => { :controller => 'avatar', :action => 'create' }, :html => { :multipart => true } do |f| %>
+        <p><%= f.file_field :avatar_data, :size => 18, :class => 'myacct' %></p>
+        <p><%= image_submit_tag 'buttons/get_image.gif', :alt => 'Get Image' %></p>
+      <% end -%>
+
+    </div>
+    
+    <div id="step2">
+      <div class="steps-title">2. Customize your Profile</div>
+      <br />
+      Go to &quot;<%= link_to "My Account", account_url(:action => 'edit') %>&quot;
+      to modify settings like e-mail, password and ID Image.</div>
+    
+    <div id="step3">
+      <div id="steps-title">3. Verify your e-mail address</div>
+      <br />
+      <span class="e-mail"><%= current_user.email %></span><br />
+      A confirmation e-mail has been sent to your e-mail address.
+      Your account will not be verified until you respond to that message.<br />
+      <br />
+      <%= link_to "Resend confirmation e-mail", account_url(:action => 'resend_confirmation'), :post => true %>
+    </div>  
+  </div>
+</div>

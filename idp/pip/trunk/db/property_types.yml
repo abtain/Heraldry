@@ -1,0 +1,813 @@
+--- 
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: Root
+    mime_type: 
+    id: "1"
+    description: Root Node
+    short_name: root
+    user_id: 
+    parent_id: 
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: Personal
+    mime_type: 
+    id: "2"
+    description: Personal
+    short_name: personal
+    user_id: 
+    parent_id: "1"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: First Name
+    mime_type: string
+    id: "3"
+    description: First Name
+    short_name: first_name
+    user_id: 
+    parent_id: "2"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: Middle Name
+    mime_type: string
+    id: "4"
+    description: Middle Name
+    short_name: middle_name
+    user_id: 
+    parent_id: "2"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: Last Name
+    mime_type: string
+    id: "5"
+    description: Last Name
+    short_name: last_name
+    user_id: 
+    parent_id: "2"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: Date of Birth
+    mime_type: date
+    id: "6"
+    description: Date of Birth
+    short_name: dob
+    user_id: 
+    parent_id: "2"
+    control_type: date_select
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:41
+    is_global: "1"
+    title: Nickname
+    mime_type: string
+    id: "7"
+    description: Nickname
+    short_name: nickname
+    user_id: 
+    parent_id: "2"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: gender
+    updated_at: 2006-04-21 20:03:54
+    is_global: "1"
+    title: Gender
+    mime_type: string
+    id: "8"
+    description: Gender
+    short_name: gender
+    user_id: 
+    parent_id: "2"
+    control_type: select
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: time_zone
+    updated_at: 2006-04-21 20:01:37
+    is_global: "1"
+    title: Timezone
+    mime_type: string
+    id: "9"
+    description: Time Zone
+    short_name: timezone
+    user_id: 
+    parent_id: "2"
+    control_type: select
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: language
+    updated_at: 2006-04-21 20:01:04
+    is_global: "1"
+    title: Language
+    mime_type: string
+    id: "10"
+    description: Language Preference
+    short_name: language
+    user_id: 
+    parent_id: "2"
+    control_type: select
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Contact
+    mime_type: 
+    id: "11"
+    description: Contact
+    short_name: contact
+    user_id: 
+    parent_id: "1"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Email
+    mime_type: 
+    id: "12"
+    description: Email
+    short_name: email
+    user_id: 
+    parent_id: "11"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Personal
+    mime_type: string
+    id: "13"
+    description: Personal Email
+    short_name: contact_email_personal
+    user_id: 
+    parent_id: "12"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Work
+    mime_type: string
+    id: "14"
+    description: Work Email
+    short_name: contact_email_work
+    user_id: 
+    parent_id: "12"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Phone
+    mime_type: 
+    id: "15"
+    description: Phone
+    short_name: phone
+    user_id: 
+    parent_id: "11"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:00
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Home
+    mime_type: string
+    id: "16"
+    description: Home Phone
+    short_name: contact_phone_home
+    user_id: 
+    parent_id: "15"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Work
+    mime_type: string
+    id: "17"
+    description: Work Phone
+    short_name: contact_phone_work
+    user_id: 
+    parent_id: "15"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Mobile
+    mime_type: string
+    id: "18"
+    description: Mobile
+    short_name: contact_phone_mobile
+    user_id: 
+    parent_id: "15"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Fax
+    mime_type: string
+    id: "19"
+    description: Fax
+    short_name: contact_phone_fax
+    user_id: 
+    parent_id: "15"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Instant Messenger
+    mime_type: 
+    id: "20"
+    description: IM
+    short_name: im
+    user_id: 
+    parent_id: "11"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: AIM
+    mime_type: string
+    id: "21"
+    description: AIM
+    short_name: contact_im_aim
+    user_id: 
+    parent_id: "20"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: ICQ
+    mime_type: string
+    id: "22"
+    description: ICQ
+    short_name: contact_im_icq
+    user_id: 
+    parent_id: "20"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:42
+    is_global: "1"
+    title: Jabber
+    mime_type: string
+    id: "23"
+    description: Jabber
+    short_name: contact_im_jabber
+    user_id: 
+    parent_id: "20"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: MSN
+    mime_type: string
+    id: "24"
+    description: MSN
+    short_name: contact_im_msn
+    user_id: 
+    parent_id: "20"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Yahoo
+    mime_type: string
+    id: "25"
+    description: yahoo
+    short_name: contact_im_yahoo
+    user_id: 
+    parent_id: "20"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Skype
+    mime_type: string
+    id: "26"
+    description: Skype
+    short_name: contact_im_skype
+    user_id: 
+    parent_id: "20"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Addresses
+    mime_type: 
+    id: "27"
+    description: Addresses
+    short_name: addresses
+    user_id: 
+    parent_id: "1"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Home
+    mime_type: string
+    id: "28"
+    description: Home Address
+    short_name: address_home
+    user_id: 
+    parent_id: "27"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Street 1
+    mime_type: string
+    id: "29"
+    description: Street 1
+    short_name: address_home_street_1
+    user_id: 
+    parent_id: "28"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Street 2
+    mime_type: string
+    id: "30"
+    description: Street 2
+    short_name: address_home_street_2
+    user_id: 
+    parent_id: "28"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: City
+    mime_type: string
+    id: "31"
+    description: City
+    short_name: address_home_city
+    user_id: 
+    parent_id: "28"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: State
+    mime_type: string
+    id: "32"
+    description: State
+    short_name: address_home_state
+    user_id: 
+    parent_id: "28"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Postal Code
+    mime_type: string
+    id: "33"
+    description: Postal Code
+    short_name: address_home_postal_code
+    user_id: 
+    parent_id: "28"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: country
+    updated_at: 2006-04-21 20:00:48
+    is_global: "1"
+    title: Country
+    mime_type: string
+    id: "34"
+    description: Country
+    short_name: address_home_country
+    user_id: 
+    parent_id: "28"
+    control_type: select
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Work
+    mime_type: string
+    id: "35"
+    description: Work Address
+    short_name: address_work
+    user_id: 
+    parent_id: "27"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Street 1
+    mime_type: string
+    id: "36"
+    description: Street 1
+    short_name: address_work_street_1
+    user_id: 
+    parent_id: "35"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:43
+    is_global: "1"
+    title: Street 2
+    mime_type: string
+    id: "37"
+    description: Street 2
+    short_name: address_work_street_2
+    user_id: 
+    parent_id: "35"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: City
+    mime_type: string
+    id: "38"
+    description: City
+    short_name: address_work_city
+    user_id: 
+    parent_id: "35"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: State
+    mime_type: string
+    id: "39"
+    description: State
+    short_name: address_work_state
+    user_id: 
+    parent_id: "35"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Postal Code
+    mime_type: string
+    id: "40"
+    description: Postal Code
+    short_name: address_work_postal_code
+    user_id: 
+    parent_id: "35"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: country
+    updated_at: 2006-04-21 20:00:48
+    is_global: "1"
+    title: Country
+    mime_type: string
+    id: "41"
+    description: Country
+    short_name: address_work_country
+    user_id: 
+    parent_id: "35"
+    control_type: select
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Bill To
+    mime_type: string
+    id: "42"
+    description: Bill To Address
+    short_name: address_bill_to
+    user_id: 
+    parent_id: "27"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Street 1
+    mime_type: string
+    id: "43"
+    description: Street 1
+    short_name: address_bill_to_street_1
+    user_id: 
+    parent_id: "42"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Street 2
+    mime_type: string
+    id: "44"
+    description: Street 2
+    short_name: address_bill_to_street_2
+    user_id: 
+    parent_id: "42"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: City
+    mime_type: string
+    id: "45"
+    description: City
+    short_name: address_bill_to_city
+    user_id: 
+    parent_id: "42"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: State
+    mime_type: string
+    id: "46"
+    description: State
+    short_name: address_bill_to_state
+    user_id: 
+    parent_id: "42"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Postal Code
+    mime_type: string
+    id: "47"
+    description: Postal Code
+    short_name: address_bill_to_postal_code
+    user_id: 
+    parent_id: "42"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: country
+    updated_at: 2006-04-21 20:00:48
+    is_global: "1"
+    title: Country
+    mime_type: string
+    id: "48"
+    description: Country
+    short_name: address_bill_to_country
+    user_id: 
+    parent_id: "42"
+    control_type: select
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Ship To
+    mime_type: string
+    id: "49"
+    description: Ship To Address
+    short_name: address_ship_to
+    user_id: 
+    parent_id: "27"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Street 1
+    mime_type: string
+    id: "50"
+    description: Street 1
+    short_name: address_ship_to_street_1
+    user_id: 
+    parent_id: "49"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:44
+    is_global: "1"
+    title: Street 2
+    mime_type: string
+    id: "51"
+    description: Street 2
+    short_name: address_ship_to_street_2
+    user_id: 
+    parent_id: "49"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:45
+    is_global: "1"
+    title: City
+    mime_type: string
+    id: "52"
+    description: City
+    short_name: address_ship_to_city
+    user_id: 
+    parent_id: "49"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:45
+    is_global: "1"
+    title: State
+    mime_type: string
+    id: "53"
+    description: State
+    short_name: address_ship_to_state
+    user_id: 
+    parent_id: "49"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:45
+    is_global: "1"
+    title: Postal Code
+    mime_type: string
+    id: "54"
+    description: Postal Code
+    short_name: address_ship_to_postal_code
+    user_id: 
+    parent_id: "49"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: country
+    updated_at: 2006-04-21 20:00:48
+    is_global: "1"
+    title: Country
+    mime_type: string
+    id: "55"
+    description: Country
+    short_name: address_ship_to_country
+    user_id: 
+    parent_id: "49"
+    control_type: select
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:45
+    is_global: "1"
+    title: Links
+    mime_type: 
+    id: "56"
+    description: Links
+    short_name: links
+    user_id: 
+    parent_id: "1"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:45
+    is_global: "1"
+    title: Website
+    mime_type: string
+    id: "57"
+    description: Website
+    short_name: links_website
+    user_id: 
+    parent_id: "56"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01
+- !ruby/object:PropertyType 
+  attributes: 
+    format: 
+    updated_at: 2006-04-21 19:46:45
+    is_global: "1"
+    title: Blog
+    mime_type: string
+    id: "58"
+    description: Blog
+    short_name: links_blog
+    user_id: 
+    parent_id: "56"
+    control_type: input_text
+    created_at: 2006-04-16 22:12:01

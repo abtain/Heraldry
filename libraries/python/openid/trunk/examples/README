@@ -1,0 +1,58 @@
+The examples directory contains a working server and consumer that use
+the openid libraries.  They are both written using python's standard
+BaseHTTPServer.
+
+
+To run the example system:
+
+1. Make sure you've installed the library, as explained in the
+   installation instructions.
+
+2. Start the consumer server:
+
+        python consumer.py --port 8001
+
+
+3. In another terminal, start the identity server:
+
+        python server.py --port 8000
+
+   (Hit Ctrl-C in either server's window to stop that server.)
+
+
+4. Open your web broswer, and go to the consumer server:
+
+        http://localhost:8001/
+
+   Note that all pages the consumer server shows will have "Python OpenID
+   Consumer Example" across the top.
+
+
+5. Enter an identity url managed by the sample identity server:
+
+        http://localhost:8000/bob
+
+
+6. The browser will be redirected to the sample server, which will be
+   requesting that you log in to proceed.  Enter the username for the
+   identity URL into the login box:
+
+        bob
+
+   Note that all pages the identity server shows will have "Python
+   OpenID Server Example" across the top.
+
+
+7. After you log in as bob, the server example will ask you if you
+   want to allow http://localhost:8001/ to know your identity.  Say
+   yes.
+
+
+8. You should end up back on the consumer site, at a page indicating
+   you've logged in successfully.
+
+
+That's a basic OpenID login procedure.  You can continue through it,
+playing with variations to see how they work.  The python code is
+intended to be a straightforward example of how to use the python
+OpenID library to function as either an identity server or consumer.

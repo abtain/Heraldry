@@ -1,0 +1,1 @@
+I am a bad avatar.  I am just text.  Text should not be saved in the db!

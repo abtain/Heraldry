@@ -1,0 +1,5 @@
+# Store API keys for xml consumers.
+# Keys can be any length and combination of characters.
+# consumer: value
+
+#a_company: AB332B934

@@ -1,0 +1,63 @@
+PERSONAL IDENTITY PROVIDER - PIP
+
+= How To Run
+View the INSTALL file for more details on installing and running PIP.
+
+= General Overview
+PIP is an open-source identity server that utilizes the OpenID 1.1 and Yadis 
+1.0 standards to identify and distribute identity resources.  Users utilize 
+PIP to manage digital identity information, authenticate themselves for 
+consumer sites, and authorize consumer sites for access to their identity 
+information. There are three main components to PIP: Yadis, OpenID, and 
+Profile Management. These components are explained in more detail below.
+
+== Yadis
+Yadis 1.0 is service discovery system that allows consumer sites to know what 
+services are provided by PIP. It is provided as a service directly by the 
+mongrel server via lib/yadis_handler/lib/yadis_handler.rb. In a Yadis request, 
+the consumer site visits the identity url provided by the user looking for 
+Yadis headers that indicate where the Yadis document resides. These headers are
+provided at [pip_url]/user/[user_login]/yadis by 
+lib/yadis_handler/lib/yadis_handler.rb and at [user_login].[pip_url] by 
+app/views/account/index.rhtml. The document itself is provided at 
+[pip_url]/user/[user_login]/yadis by yadis_handler.rb. Though a Yadis document 
+may point to many services, the PIP Yadis document points only to the OpenID 
+service provided by PIP.
+
+== OpenID
+OpenID 1.1 allows consumer sites to use identity URLs, provided by PIP, to 
+authenticate users and gain access to identity data stored within the PIP 
+database. Though all OpenID transactions provide authentication of the user, 
+not all require or result in identity information being exchanged. All OpenID 
+functionality in PIP is provided through the ServerController in 
+app/controllers/server_controller.rb. ServerController provides a single point 
+of entry, #index, with which consumer sites can associate with the PIP and to 
+which consumer sites can redirect their users to perform authentication and 
+authorization. Consumer site association provides security against various 
+attacks that can be performed on the OpenID process. User authentication and 
+authorization are the process of the user logging in to PIP to authenticate 
+that they do own the identity url and the process by which the user authorizes
+that the consumer site may have access to specific pieces of their identity 
+data. Metadata about information shared and consumer sites that have been 
+authorized is stored in the Profile and TrustRequest models.
+
+== Profile Management
+PIP provides a single location at which a user may maintain his online 
+identity. This service is provided by PropertyTypesController in conjunction 
+with the PropertyType and Property models. Users have one Property, which 
+contains the identity information, per PropertyType, which contains 
+meta-information about the Property. Users have a default set of PropertyTypes 
+referred to as global property types that they may not remove. In addition, 
+they may create new PropertyTypes over which they have full control. 
+Currently, there are only eight property types that are used in OpenID 
+transactions. These are specified by User::OPEN_ID_MAPPINGS.
+
+== Further Reading
+For further insight into the behavior of the system, read the rDoc html files 
+for the classes mentioned above. The rDocs can be found in doc/app/index.html. 
+
+= Requirements
+Mongrel Web Server - http://mongrel.rubyforge.org/
+JanRain ruby-openid and ruby-yadis gems - 
+  http://www.openidenabled.com/openid/libraries/ruby/download
+MySQL or other database server

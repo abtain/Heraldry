@@ -1,0 +1,44 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/switchtower.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+# Add a task to run the rcov process
+desc "Run specified test with Rcov to measure coverage"
+task :rcov do |t|
+  raise "No File Specified\nUsage: rake rcov FILE=test_file" unless ENV['FILE']
+  file = ENV['FILE']
+  raise "Invalid File Specified\nUsage: rake rcov FILE=test_file" unless File.exists?(file)
+  
+#  type = (file =~ /test\/(\w+?)\//; $1)
+#  type = "units" if type == 'unit'
+  type = "single"
+  puts type
+  
+  `rm -rf #{File.expand_path(ENV['PWD'])}/coverage/#{type}`
+  
+  params = String.new
+  if ENV['RCOV_PARAMS']
+    params << ENV['RCOV_PARAMS']
+  end
+  if ENV['SHOW_ONLY']
+    params << " -x ^\\(\\?\\!\\#{ENV['SHOW_ONLY']}\\)"
+  end
+
+  run_code = 'rcov -o ' << File.expand_path(ENV['PWD']) << "/coverage/" << type
+  run_code << ' -T -x ruby_gems/*,rcov* --rails -Ilib:test ' << file
+  
+  unless params.empty?
+    run_code << " --rcov-params=\"#{params}\""
+  end
+  
+  puts run_code
+  
+  puts `#{run_code}`
+end

@@ -1,0 +1,97 @@
+<% # Licensed to the Apache Software Foundation (ASF) under one
+   # or more contributor license agreements.  See the NOTICE file
+   # distributed with this work for additional information
+   # regarding copyright ownership.  The ASF licenses this file
+   # to you under the Apache License, Version 2.0 (the
+   # "License"); you may not use this file except in compliance
+   # with the License.  You may obtain a copy of the License at
+   # 
+   #   http://www.apache.org/licenses/LICENSE-2.0
+   # 
+   # Unless required by applicable law or agreed to in writing,
+   # software distributed under the License is distributed on an
+   # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   # KIND, either express or implied.  See the License for the
+   # specific language governing permissions and limitations
+   # under the License. %>
+
+<div class="page-head">
+  <div id="pagebody-idimage"><%= current_avatar %></div>
+  <div id="pagebody-idimagetext">
+    For proper security be sure that the image to the right matches your id image.
+  </div>
+  <h1 class="pagebody">Trust Request</h1>
+  <br style="clear:both" />
+</div>
+
+<div class="gradient_arch" style="background: url(/images/gradient_arch.gif) no-repeat top left; min-height: 70px">
+  <br />
+  <div class="pagebody-text">
+    <%= form_tag( {:action => 'decision'} , { :method => 'post' } ) %>
+      <h3>Authorization Request</h3>
+      <div id="trust-h1">
+        This site: <span class="colored"><b><%=h @trust_root %></b></span> is asking to verify your ID:
+        <span class="colored"><b><%=h @identity_url %></b></span><br /><br />
+
+        <%= radio_button_tag 'keep_until', 'once', :checked => 'checked'%>
+        <label for="keep_until">Allow just this once</label><br />
+        <%= radio_button_tag 'keep_until', 'forever' %>
+        <label for="keep_until">Allow forever</label><br />
+        <%= radio_button_tag 'keep_until', 'exact' %>
+        <label for="keep_until">Allow until:</label>
+        <%= select_date %>
+      </div>
+
+      <br /><br />
+      <h3>Trust Profile</h3>
+      <%= text_for_user_notification(@properties) %>
+<br />
+
+<table width="85%">
+  <tbody>
+    <tr>
+      <th>Use An Existing Trust Profile</th>
+      <th><span style="font-style:italic; color: #C0C0C0">or</span></th>
+      <th>Create a New Trust Profile</th>
+    </tr>
+    <tr valign="top">
+      <td valign="top" style="padding-left: 15px;">
+        <label for="trust_profile"><b>Trust Profile</b></label>
+        <select name="trust_profile" id="trust_profile" onchange="TrustProfileForm.highlight_profile()">
+          <option value="-1">(select a profile)</option>
+          <%= options_from_collection_for_select current_user.profiles, 'id', 'title' %>
+        </select>
+      </td>
+      <td>&nbsp;</td>
+      <td style="padding-left: 15px">
+        <%= hidden_fields_for_highlighting %>
+
+        <% unless @properties.empty? -%>
+        <table id="requested_properties">
+          <% for property in @properties %>
+            <tr id="row_for_property_<%= property.id %>">
+              <td><input type='checkbox' name='property[]' value="<%= property.id %>" id="<%= property.to_dom_id %>" /></td>
+              <td><label for="property_<%= property.id %>"><%= property.property_type.description + (required_fields.include?(property.property_type.short_name) ? '*' : '') %></label></td>
+              <td><label for="property_<%= property.id %>"><%= friendly_property_value(property) %></label></td>
+            </tr>
+          <% end %>
+        </table>
+        <br /><br />
+        <% end -%>
+
+        <label for="profile_name">Save this Trust Profile as:</label>
+        <%= text_field_tag 'profile_name', '', :id => 'trust-profile-name' %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+      <%= hidden_field_tag 'query', @query_string %>
+
+      <%= image_submit_tag 'buttons/allow.gif',  :alt => 'Allow', :name => 'yes' %>
+      <%= link_to(image_tag( 'buttons/deny.gif', :alt => 'Deny', :style => 'margin-left:15px;' ),
+                  openid_request.cancel_url ) %>      
+    </form> 
+  </div>
+</div>

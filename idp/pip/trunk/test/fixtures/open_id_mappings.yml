@@ -1,0 +1,28 @@
+--- 
+open_id_mapping_1: 
+  id: 1
+  short_name: openid.sreg.dob
+open_id_mapping_2: 
+  id: 2
+  short_name: openid.sreg.postcode
+open_id_mapping_3: 
+  id: 3
+  short_name: openid.sreg.language
+open_id_mapping_4: 
+  id: 4
+  short_name: openid.sreg.timezone
+open_id_mapping_5: 
+  id: 5
+  short_name: openid.sreg.nickname
+open_id_mapping_6: 
+  id: 6
+  short_name: openid.sreg.fullname
+open_id_mapping_7: 
+  id: 7
+  short_name: openid.sreg.country
+open_id_mapping_8: 
+  id: 8
+  short_name: openid.sreg.gender
+open_id_mapping_9: 
+  id: 9
+  short_name: openid.sreg.email

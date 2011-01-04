@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Openid Plug-in
+Bundle-SymbolicName: com.janrain.openid
+Bundle-Version: 1.0.0
+Bundle-Activator: com.janrain.openid.Activator
+Bundle-Vendor: JanRain.com
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.junit
+Eclipse-LazyStart: true
+Bundle-ClassPath: lib/libidn-0.6.3.jar
+Export-Package: com.janrain.openid,
+ com.janrain.openid.consumer,
+ com.janrain.openid.store

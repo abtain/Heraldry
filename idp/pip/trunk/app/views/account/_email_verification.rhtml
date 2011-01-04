@@ -1,0 +1,35 @@
+<% # Licensed to the Apache Software Foundation (ASF) under one
+   # or more contributor license agreements.  See the NOTICE file
+   # distributed with this work for additional information
+   # regarding copyright ownership.  The ASF licenses this file
+   # to you under the Apache License, Version 2.0 (the
+   # "License"); you may not use this file except in compliance
+   # with the License.  You may obtain a copy of the License at
+   # 
+   #   http://www.apache.org/licenses/LICENSE-2.0
+   # 
+   # Unless required by applicable law or agreed to in writing,
+   # software distributed under the License is distributed on an
+   # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   # KIND, either express or implied.  See the License for the
+   # specific language governing permissions and limitations
+   # under the License. %>
+
+<div class="not-verified">
+  <div class='rbroundbox3'>
+    <div class='rbtop3'>
+      <div></div>
+    </div>
+    <div class='rbcontent3' style="padding-left: 10px">
+        <h1>You have not yet verified your e-mail address.</h1><br />
+        <h2><%= current_user.email %></h2><br />
+      <p>A confirmation e-mail has been sent to your e-mail address. Your account will not be verified until you respond to that message.</p>
+      <br />
+      <%= link_to "Resend confirmation e-mail", { :controller => 'account', :action => 'resend_confirmation', :session_id_validation => security_token } , :post => true, :class => 'white' %> 
+    </div>
+    <div class='rbbot3'>
+      <div></div>
+    </div>
+  </div>  
+  <br style="clear: both" />
+</div>

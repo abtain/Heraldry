@@ -1,0 +1,1 @@
+RAILS_ENV=production ./script/runner 'ActiveRecord::Base.connection.delete("DELETE FROM sessions WHERE updated_at < now() - 12*3600")'

@@ -1,0 +1,814 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+# == Schema Information
+# Schema version: 27
+#
+# Table name: property_types
+#
+#  id           :integer(11)   not null, primary key
+#  parent_id    :integer(11)   
+#  title        :string(255)   
+#  short_name   :string(255)   
+#  mime_type    :string(255)   
+#  description  :text          
+#  created_at   :datetime      
+#  updated_at   :datetime      
+#  user_id      :integer(11)   
+#  is_global    :boolean(1)    
+#  control_type :string(255)   default(input_text)
+#  format       :string(255)   
+#  order_by     :integer(11)   
+#
+
+--- 
+property_type_50: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Street 1
+  is_global: true
+  mime_type: string
+  id: 50
+  description: Street 1
+  short_name: address_ship_to_street_1
+  user_id: 
+  parent_id: 49
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_38: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: City
+  is_global: true
+  mime_type: string
+  id: 38
+  description: City
+  short_name: address_work_city
+  user_id: 
+  parent_id: 35
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_16: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Home
+  is_global: true
+  mime_type: string
+  id: 16
+  description: Home Phone
+  short_name: contact_phone_home
+  user_id: 
+  parent_id: 15
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_1: 
+  updated_at: 2006-04-21 21:00:58 Z
+  format: 
+  title: Root
+  is_global: true
+  mime_type: 
+  id: 1
+  description: Root Node
+  short_name: root
+  user_id: 
+  parent_id: 
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_27: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Addresses
+  is_global: true
+  mime_type: 
+  id: 27
+  description: Addresses
+  short_name: addresses
+  user_id: 
+  parent_id: 1
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_49: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Ship To
+  is_global: true
+  mime_type: string
+  id: 49
+  description: Ship To Address
+  short_name: address_ship_to
+  user_id: 
+  parent_id: 27
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_40: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: Postal Code
+  is_global: true
+  mime_type: string
+  id: 40
+  description: Postal Code
+  short_name: address_work_postal_code
+  user_id: 
+  parent_id: 35
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_28: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Home
+  is_global: true
+  mime_type: string
+  id: 28
+  description: Home Address
+  short_name: address_home
+  user_id: 
+  parent_id: 27
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_2: 
+  updated_at: 2006-04-21 21:00:58 Z
+  format: 
+  title: Personal
+  is_global: true
+  mime_type: 
+  id: 2
+  description: Personal
+  short_name: personal
+  user_id: 
+  parent_id: 1
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_17: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Work
+  is_global: true
+  mime_type: string
+  id: 17
+  description: Work Phone
+  short_name: contact_phone_work
+  user_id: 
+  parent_id: 15
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_39: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: State
+  is_global: true
+  mime_type: string
+  id: 39
+  description: State
+  short_name: address_work_state
+  user_id: 
+  parent_id: 35
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_51: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Street 2
+  is_global: true
+  mime_type: string
+  id: 51
+  description: Street 2
+  short_name: address_ship_to_street_2
+  user_id: 
+  parent_id: 49
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_52: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: City
+  is_global: true
+  mime_type: string
+  id: 52
+  description: City
+  short_name: address_ship_to_city
+  user_id: 
+  parent_id: 49
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_30: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Street 2
+  is_global: true
+  mime_type: string
+  id: 30
+  description: Street 2
+  short_name: address_home_street_2
+  user_id: 
+  parent_id: 28
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_18: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Mobile
+  is_global: true
+  mime_type: string
+  id: 18
+  description: Mobile
+  short_name: contact_phone_mobile
+  user_id: 
+  parent_id: 15
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_3: 
+  updated_at: 2006-04-21 21:00:58 Z
+  format: 
+  title: First Name
+  is_global: true
+  mime_type: string
+  id: 3
+  description: First Name
+  short_name: first_name
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_29: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Street 1
+  is_global: true
+  mime_type: string
+  id: 29
+  description: Street 1
+  short_name: address_home_street_1
+  user_id: 
+  parent_id: 28
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_41: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: country
+  title: Country
+  is_global: true
+  mime_type: string
+  id: 41
+  description: Country
+  short_name: address_work_country
+  user_id: 
+  parent_id: 35
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: select
+property_type_42: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: Bill To
+  is_global: true
+  mime_type: string
+  id: 42
+  description: Bill To Address
+  short_name: address_bill_to
+  user_id: 
+  parent_id: 27
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_20: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Instant Messenger
+  is_global: true
+  mime_type: 
+  id: 20
+  description: IM
+  short_name: im
+  user_id: 
+  parent_id: 11
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_4: 
+  updated_at: 2006-04-21 21:00:58 Z
+  format: 
+  title: Middle Name
+  is_global: true
+  mime_type: string
+  id: 4
+  description: Middle Name
+  short_name: middle_name
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_19: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Fax
+  is_global: true
+  mime_type: string
+  id: 19
+  description: Fax
+  short_name: contact_phone_fax
+  user_id: 
+  parent_id: 15
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_31: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: City
+  is_global: true
+  mime_type: string
+  id: 31
+  description: City
+  short_name: address_home_city
+  user_id: 
+  parent_id: 28
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_53: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: State
+  is_global: true
+  mime_type: string
+  id: 53
+  description: State
+  short_name: address_ship_to_state
+  user_id: 
+  parent_id: 49
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_54: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Postal Code
+  is_global: true
+  mime_type: string
+  id: 54
+  description: Postal Code
+  short_name: address_ship_to_postal_code
+  user_id: 
+  parent_id: 49
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_32: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: State
+  is_global: true
+  mime_type: string
+  id: 32
+  description: State
+  short_name: address_home_state
+  user_id: 
+  parent_id: 28
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_10: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: language
+  title: Language
+  is_global: true
+  mime_type: string
+  id: 10
+  description: Language Preference
+  short_name: language
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: select
+  open_id_mapping_id: 3
+property_type_5: 
+  updated_at: 2006-04-21 21:00:58 Z
+  format: 
+  title: Last Name
+  is_global: true
+  mime_type: string
+  id: 5
+  description: Last Name
+  short_name: last_name
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_21: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: AIM
+  is_global: true
+  mime_type: string
+  id: 21
+  description: AIM
+  short_name: contact_im_aim
+  user_id: 
+  parent_id: 20
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_43: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: Street 1
+  is_global: true
+  mime_type: string
+  id: 43
+  description: Street 1
+  short_name: address_bill_to_street_1
+  user_id: 
+  parent_id: 42
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_44: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: Street 2
+  is_global: true
+  mime_type: string
+  id: 44
+  description: Street 2
+  short_name: address_bill_to_street_2
+  user_id: 
+  parent_id: 42
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_22: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: ICQ
+  is_global: true
+  mime_type: string
+  id: 22
+  description: ICQ
+  short_name: contact_im_icq
+  user_id: 
+  parent_id: 20
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_6: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Date of Birth
+  is_global: true
+  mime_type: date
+  id: 6
+  description: Date of Birth
+  short_name: dob
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: date_select
+  open_id_mapping_id: 1
+property_type_11: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Contact
+  is_global: true
+  mime_type: 
+  id: 11
+  description: Contact
+  short_name: contact
+  user_id: 
+  parent_id: 1
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_33: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Postal Code
+  is_global: true
+  mime_type: string
+  id: 33
+  description: Postal Code
+  short_name: address_home_postal_code
+  user_id: 
+  parent_id: 28
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+  open_id_mapping_id: 2
+property_type_55: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: country
+  title: Country
+  is_global: true
+  mime_type: string
+  id: 55
+  description: Country
+  short_name: address_ship_to_country
+  user_id: 
+  parent_id: 49
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: select
+property_type_56: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Links
+  is_global: true
+  mime_type: 
+  id: 56
+  description: Links
+  short_name: links
+  user_id: 
+  parent_id: 1
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_34: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: country
+  title: Country
+  is_global: true
+  mime_type: string
+  id: 34
+  description: Country
+  short_name: address_home_country
+  user_id: 
+  parent_id: 28
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: select
+  open_id_mapping_id: 7
+property_type_12: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Email
+  is_global: true
+  mime_type: 
+  id: 12
+  description: Email
+  short_name: email
+  user_id: 
+  parent_id: 11
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_7: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Nickname
+  is_global: true
+  mime_type: string
+  id: 7
+  description: Nickname
+  short_name: nickname
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+  open_id_mapping_id: 5
+property_type_23: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Jabber
+  is_global: true
+  mime_type: string
+  id: 23
+  description: Jabber
+  short_name: contact_im_jabber
+  user_id: 
+  parent_id: 20
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_45: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: City
+  is_global: true
+  mime_type: string
+  id: 45
+  description: City
+  short_name: address_bill_to_city
+  user_id: 
+  parent_id: 42
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_46: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: State
+  is_global: true
+  mime_type: string
+  id: 46
+  description: State
+  short_name: address_bill_to_state
+  user_id: 
+  parent_id: 42
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_24: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: MSN
+  is_global: true
+  mime_type: string
+  id: 24
+  description: MSN
+  short_name: contact_im_msn
+  user_id: 
+  parent_id: 20
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_8: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: gender
+  title: Gender
+  is_global: true
+  mime_type: string
+  id: 8
+  description: Gender
+  short_name: gender
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: select
+  open_id_mapping_id: 8
+property_type_13: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/
+  title: Personal
+  is_global: true
+  mime_type: string
+  id: 13
+  description: Personal Email
+  short_name: contact_email_personal
+  user_id: 
+  parent_id: 12
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+  open_id_mapping_id: 9
+property_type_35: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Work
+  is_global: true
+  mime_type: string
+  id: 35
+  description: Work Address
+  short_name: address_work
+  user_id: 
+  parent_id: 27
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_57: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Website
+  is_global: true
+  mime_type: string
+  id: 57
+  description: Website
+  short_name: links_website
+  user_id: 
+  parent_id: 56
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_58: 
+  updated_at: 2006-04-21 21:01:02 Z
+  format: 
+  title: Blog
+  is_global: true
+  mime_type: string
+  id: 58
+  description: Blog
+  short_name: links_blog
+  user_id: 
+  parent_id: 56
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_36: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Street 1
+  is_global: true
+  mime_type: string
+  id: 36
+  description: Street 1
+  short_name: address_work_street_1
+  user_id: 
+  parent_id: 35
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_14: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Work
+  is_global: true
+  mime_type: string
+  id: 14
+  description: Work Email
+  short_name: contact_email_work
+  user_id: 
+  parent_id: 12
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_9: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: time_zone
+  title: Timezone
+  is_global: true
+  mime_type: string
+  id: 9
+  description: Time Zone
+  short_name: timezone
+  user_id: 
+  parent_id: 2
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: select
+  open_id_mapping_id: 4
+property_type_25: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Yahoo
+  is_global: true
+  mime_type: string
+  id: 25
+  description: yahoo
+  short_name: contact_im_yahoo
+  user_id: 
+  parent_id: 20
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_47: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: Postal Code
+  is_global: true
+  mime_type: string
+  id: 47
+  description: Postal Code
+  short_name: address_bill_to_postal_code
+  user_id: 
+  parent_id: 42
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_48: 
+  updated_at: 2006-04-21 21:19:49 Z
+  format: country
+  title: Country
+  is_global: true
+  mime_type: string
+  id: 48
+  description: Country
+  short_name: address_bill_to_country
+  user_id: 
+  parent_id: 42
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: select
+property_type_26: 
+  updated_at: 2006-04-21 21:01:00 Z
+  format: 
+  title: Skype
+  is_global: true
+  mime_type: string
+  id: 26
+  description: Skype
+  short_name: contact_im_skype
+  user_id: 
+  parent_id: 20
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_15: 
+  updated_at: 2006-04-21 21:00:59 Z
+  format: 
+  title: Phone
+  is_global: true
+  mime_type: 
+  id: 15
+  description: Phone
+  short_name: phone
+  user_id: 
+  parent_id: 11
+  created_at: 2006-04-16 22:12:00 Z
+  control_type: input_text
+property_type_37: 
+  updated_at: 2006-04-21 21:01:01 Z
+  format: 
+  title: Street 2
+  is_global: true
+  mime_type: string
+  id: 37
+  description: Street 2
+  short_name: address_work_street_2
+  user_id: 
+  parent_id: 35
+  created_at: 2006-04-16 22:12:01 Z
+  control_type: input_text
+property_type_72: 
+  updated_at: 2006-05-08 15:02:45 Z
+  format: 
+  title: Full Name
+  is_global: true
+  mime_type: string
+  id: 72
+  description: Full Name
+  short_name: full_name
+  user_id: 
+  parent_id: 2
+  created_at: 2006-05-08 15:02:45 Z
+  control_type: input_text
+  open_id_mapping_id: 6

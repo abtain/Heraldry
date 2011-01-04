@@ -1,0 +1,41 @@
+h1, h2, h3, h4, h5, span, p, table, li, dt, dd, form {
+    font-family: verdana, arial, geneva, sans-serif;
+}
+span, p, table, li, dt, dd, form {
+    font-size: 12;
+}
+body {
+    margin: 18px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    vertical-align: top;
+    padding: 10px;
+}
+img {
+    border: 0;
+}
+dt {
+    font-weight: bold;
+}
+form {
+    background: rgb(240,240,240);
+    padding: 30px;
+    border: 1px rgb(200,200,200) solid;
+}
+
+.warn {
+    color: rgb(150,0,0);
+    font-weight: bold;
+}
+p.warn:before {
+    content: "Note: ";
+}
+h2 {
+    margin-top: 20px;
+    background: #e8e8e8;
+    text-align: center;
+}

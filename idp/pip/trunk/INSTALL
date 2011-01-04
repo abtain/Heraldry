@@ -1,0 +1,74 @@
+
+  PIP INSTALLATION OVERVIEW
+
+  Quick Start - Unix
+  ------------------
+
+  For more information on this project, visit 
+  http://incubator.apache.org/heraldry
+
+  To download the latest copy of PIP 
+$ svn co https://svn.apache.org/repos/asf/incubator/heraldry/idp/pip/trunk pip
+
+  PIP depends on Ruby on Rails being installed and several gems. Ruby version 
+  1.8.4 is recommended which is available at 
+  http://www.ruby-lang.org/en/20020102.html. You will also need the gem utility
+  available at http://rubyforge.org/frs/?group_id=126
+
+  To install rails
+
+$ gem install rails -y
+	
+  Then install the other required gems
+ 
+$ gem install mongrel -y
+$ gem install tzinfo
+$ gem install ruby-openid -y
+$ gem install rcov
+
+  Rmagick depends on either the ImageMagick or GraphicsMagick image processing
+  libraries. Rmagick is used for the captcha on the create account page. It is 
+  'required' via the ActsAsAttachment plugin.
+
+$ gem install rmagick
+  
+  You will need 2 databases for development and testing.
+
+$ mysqladmin create pip_dev -u root
+$ mysqladmin create pip_test -u root
+
+  Now you will need to goto the local checkout of the pip code
+
+$ cd pip
+$ cp config/database.example.yml config/database.yml
+$ cp config/settings.example.yml config/settings.yml
+$ cp config/api_keys.yml.example config/api_keys.yml
+	
+  Edit the config/database.yml file to match your local setup. You may need to
+  change the 'adapter: mysql' lines if you are using a database other than
+  MySQL and add your password to the 'password: ' lines. The mysqld.sock file
+  is sometimes not found, can can define it like 
+  'socket: /var/run/mysqld/mysqld.sock'. If you are unsure of the location try
+  running 'mysql_config' or 'locate mysqld.sock'.
+  
+  Edit the config/settings.yml to match your local setup. If you are only doing
+  local development then change 'yourappname.com' to 'localhost' in 
+  'app_host: yourappname.com'
+
+  The config/api_keys.yml file is used to allow external sites to create 
+  accounts remotely.
+  
+  Create all the database tables
+
+$ rake db:migrate
+
+  Configure your site settings.
+  
+$ vim config/settings.yml
+
+  Start the local server in development mode
+
+$ sudo mongrel_rails start -p 80 -e development -S config/mongrel.conf
+
+  Navigate to http://localhost/ and if all went well, you will have a local
+  copy of the pip running.

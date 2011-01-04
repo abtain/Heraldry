@@ -1,0 +1,50 @@
+<% # Licensed to the Apache Software Foundation (ASF) under one
+   # or more contributor license agreements.  See the NOTICE file
+   # distributed with this work for additional information
+   # regarding copyright ownership.  The ASF licenses this file
+   # to you under the Apache License, Version 2.0 (the
+   # "License"); you may not use this file except in compliance
+   # with the License.  You may obtain a copy of the License at
+   # 
+   #   http://www.apache.org/licenses/LICENSE-2.0
+   # 
+   # Unless required by applicable law or agreed to in writing,
+   # software distributed under the License is distributed on an
+   # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   # KIND, either express or implied.  See the License for the
+   # specific language governing permissions and limitations
+   # under the License. %>
+
+<div id="<%= category.to_dom_id %>"> 
+  <%= form_remote_tag(:url => {:action => 'update', :type => 'category', :id => category}, :html => {:id => "form_#{category.to_dom_id}"}) %>
+  <div id="category_<%= category.to_dom_id %>" class="category-set">
+    <div class="gradient">
+      <div class="expand"><%= link_to_function image_tag('buttons/expand_off.gif', :size => '32x32', :alt => 'Expand', :id => "toggle_#{category.to_dom_id}"), %(CategoryForm.toggle_collapse('#{category.to_dom_id}')) %></div>
+      <div class="profile-row" style='line-height: normal;'>
+        <%= category_label_or_input_for(category) %>
+        <%= category_delete_icon_if_necessary(category) %>
+        <span id="edit_icon_<%= category.to_dom_id %>" class="edit-icon profile-edit" style='float: left; display:none'><%= image_tag('buttons/edit_icon.gif', :size => '45x48', :alt => 'Edit') %></span>
+        <br style='clear:both' />
+      </div>
+      <br style='clear:both' />
+    </div>
+  </div>
+  <div id="category_content_<%= category.to_dom_id %>" class="outer-property-set" style='display:none'>
+    <div class='profile-row'>
+      <%= new_subcategory_button(category) %>
+      <br style='clear:both' />
+    </div>
+    <%= render_children(category) %>
+    <div id="properties_new_<%= category.to_dom_id %>"></div>
+    <div id="sub_categories_new_<%= category.to_dom_id %>"></div>
+    <div class='profile-row profile-edit' id="category_save_<%= category.to_dom_id %>" style='display:none'>
+      <%= image_submit_tag 'buttons/save_changes.gif', :alt => 'Save Changes', :class => 'profile-save edit-element' %>
+      <%= link_to_function(image_submit_tag('buttons/cancel_changes.gif', :alt => 'Cancel Changes', :class => 'edit-element'), "CategoryForm.toggle_collapse_and_activation('#{category.to_dom_id}')", :style => 'float: left; margin-left: 46px;') %>
+      <br style='clear:both' />
+    </div>
+  </div>
+  <%= end_form_tag %>
+  <script type="text/javascript">
+    Event.observe('<%= "category_content_#{category.to_dom_id}" %>', 'click', function(event){ CategoryForm.activate_section('<%= category.to_dom_id %>'); });
+  </script>
+</div>

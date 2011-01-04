@@ -1,0 +1,53 @@
+<% # Licensed to the Apache Software Foundation (ASF) under one
+   # or more contributor license agreements.  See the NOTICE file
+   # distributed with this work for additional information
+   # regarding copyright ownership.  The ASF licenses this file
+   # to you under the Apache License, Version 2.0 (the
+   # "License"); you may not use this file except in compliance
+   # with the License.  You may obtain a copy of the License at
+   # 
+   #   http://www.apache.org/licenses/LICENSE-2.0
+   # 
+   # Unless required by applicable law or agreed to in writing,
+   # software distributed under the License is distributed on an
+   # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   # KIND, either express or implied.  See the License for the
+   # specific language governing permissions and limitations
+   # under the License. %>
+
+<div class="page-head">
+  <div id="pagebody-idimage"><%= current_avatar %></div>
+  <h1 class="pagebody">Welcome Back!</h1>
+  <br /><br /><br />
+  <h2 class="about" style="left: 0;font-size: 14px; color: #999999;">Your last visit was <%= current_user.last_login %></h2>
+  <br style='clear:both' />  
+</div>
+
+<div class="gradient_arch" style="background: url(/images/gradient_arch.gif) no-repeat top left; min-height: 70px">
+  <br />
+
+  <div id="steps">
+    <div id="step1">
+      <div class="steps-title">Fill in your Personal<br /> Profile</div><br />
+      Your <span class="highlighted">
+        <%= link_to '&quot;Personal Profile&quot;', :controller => 'property_types', :action => 'index' %>
+      </span> 
+      contains information we can automatically provide to web sites when they request it, 
+      saving you time when signing up for new services.
+    </div>
+    
+    <div id="step2">
+      <div class="steps-title">Customize your Account Settings</div>
+      <br />
+      Go to <span class="highlighted"><%= link_to '&quot;My Account&quot;', :action => 'edit' %></span>
+      to modify settings like e-mail, password and ID Image.
+    </div>
+  
+    <div id="step3">
+      <div class="steps-title">Modify Web Site Permissions</div>
+      <br />
+      Go to <span class="highlighted"><%= link_to '&quot;Trust Profiles&quot;', :controller => 'profiles' %></span>
+      to control what information your current web sites can access.
+    </div>  
+  </div>
+</div>

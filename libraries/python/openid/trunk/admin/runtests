@@ -1,0 +1,145 @@
+#!/usr/bin/env python
+import sys
+
+test_modules = [
+    'cryptutil',
+    'storetest',
+    'oidutil',
+    'dh',
+    ]
+
+def fixpath():
+    import os.path
+    try:
+        d = os.path.dirname(__file__)
+    except NameError:
+        d = os.path.dirname(sys.argv[0])
+    parent = os.path.normpath(os.path.join(d, '..'))
+    if parent not in sys.path:
+        print "putting %s in sys.path" % (parent,)
+        sys.path.insert(0, parent)
+
+def otherTests():
+    failed = []
+    for module_name in test_modules:
+        print 'Testing %s...' % (module_name,) ,
+        sys.stdout.flush()
+        module_name = 'openid.test.' + module_name
+        try:
+            test_mod = __import__(module_name, {}, {}, [None])
+        except ImportError:
+            print 'Failed to import test %r' % (module_name,)
+            failed.append(module_name)
+        else:
+            try:
+                test_mod.test()
+            except (SystemExit, KeyboardInterrupt):
+                raise
+            except:
+                sys.excepthook(*sys.exc_info())
+                failed.append(module_name)
+            else:
+                print 'Succeeded.'
+
+
+    return failed
+
+def pyunitTests():
+    import unittest
+    from openid.test import test_htmldiscover
+    from openid.test import test_openidyadis
+    from openid.test import test_discover
+    from openid.test import test_consumer
+    from openid.test import test_message
+    from openid.test import test_server
+    from openid.test import test_symbol
+    from openid.test import kvform
+    from openid.test import oidutil
+    from openid.test import linkparse
+    from openid.test import trustroot
+    from openid.test import test_association
+    from openid.test import test_negotiation
+    from openid.test import test_auth_request
+    from openid.test import test_fetchers
+    from openid.test import test_urinorm
+    from openid.test import test_nonce
+    from openid.test import test_association_response
+    # yadis tests
+    from openid.test import test_parsehtml
+    from openid.test import test_yadis_discover
+    from openid.test import test_accept
+    from openid.test import test_etxrd
+    from openid.test import test_xri
+    from openid.test import test_xrires
+
+    pyunit_modules = [
+        test_server,
+        test_consumer,
+        test_message,
+        test_symbol,
+        test_etxrd,
+        test_xri,
+        test_xrires,
+        test_association_response,
+        test_auth_request,
+        test_negotiation,
+        ]
+
+    # Some modules have data-driven tests, and they use custom methods
+    # to build the test suite:
+    custom_modules = [
+        oidutil,
+        linkparse,
+        trustroot,
+        test_openidyadis,
+        test_htmldiscover,
+        test_association,
+        kvform,
+        test_parsehtml,
+        test_discover,
+        test_accept,
+        test_fetchers,
+        test_urinorm,
+        test_yadis_discover,
+        test_nonce,
+        ]
+
+    loader = unittest.TestLoader()
+    s = unittest.TestSuite()
+
+    for m in pyunit_modules:
+        s.addTest(loader.loadTestsFromModule(m))
+
+    for m in custom_modules:
+        try:
+            s.addTest(m.pyUnitTests())
+        except AttributeError, ex:
+            # because the AttributeError doesn't actually say which
+            # object it was.
+            print "Error loading tests from %s:" % (m,)
+            raise
+
+    runner = unittest.TextTestRunner() # verbosity=2)
+
+    return runner.run(s)
+
+
+try:
+    bool
+except NameError:
+    def bool(x):
+        return not not x
+
+def main():
+    fixpath()
+    other_failed = otherTests()
+    pyunit_result = pyunitTests()
+
+    if other_failed:
+        print 'Failures:', ', '.join(other_failed)
+
+    failed = bool(other_failed) or bool(not pyunit_result.wasSuccessful())
+    return failed
+
+if __name__ == '__main__':
+    sys.exit(main() and 1 or 0)

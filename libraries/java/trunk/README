@@ -1,0 +1,19 @@
+This is the first release of our java openid library.  Expect some rough edges
+to remain.  At the moment, javadoc is not being run, but the comments are in
+place in the source.
+
+The best spot to see how to begin using this code is in the example war.  Edit
+build.xml to set the location of the servlet-api jar file, then run:
+
+  ant example-war
+
+That will create a dist/ directory, which contains a file, openid.war.  Drop
+that .war file into the webapps directory of your servlet container, possibly
+restart the container, then visit the /openid webapp.  It's a simple one-page
+app, that verifies valid OpenIDs.  The source for the webapp is in the example
+directory.  In particular, the file:
+
+  examples/WEB-INF/src/com/janrain/openid/example/Consumer.java
+
+is a hopefully straightforward and illustrative example for using the OpenID
+library.

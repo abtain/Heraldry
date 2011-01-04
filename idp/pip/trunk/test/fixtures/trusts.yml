@@ -1,0 +1,79 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+# == Schema Information
+# Schema version: 27
+#
+# Table name: trusts
+#
+#  id         :integer(11)   not null, primary key
+#  title      :string(255)   
+#  expires_at :datetime      
+#  created_at :datetime      
+#  updated_at :datetime      
+#  profile_id :integer(11)   
+#  trust_root :string(255)   
+#
+
+mom:
+  id: 1
+  profile_id: 1
+  title: mom
+  trust_root: http://mom.com
+  expires_at: <%= 1.year.from_now.to_s :db %>
+  created_at: <%= 1.year.ago.to_s :db %>
+  updated_at: <%= 1.year.ago.to_s :db %>
+dad:
+  id: 2
+  profile_id: 1
+  title: dad
+  trust_root: http://dad.com
+  expires_at: <%= 364.days.from_now.to_s :db %>
+  created_at: <%= 366.days.ago.to_s :db %>
+  updated_at: <%= 366.days.ago.to_s :db %>
+amazon:
+  id: 3
+  profile_id: 3
+  title: Amazon
+  trust_root: http://amazon.com
+  expires_at: <%= 1.month.from_now.to_s :db %>
+  created_at: <%= 1.month.ago.to_s :db %>
+  updated_at: <%= 1.month.ago.to_s :db %>
+ebay:
+  id: 4
+  profile_id: 3
+  title: ebay
+  trust_root: http://ebay.com
+  expires_at: <%= 3.months.from_now.to_s :db %>
+  created_at: <%= 3.months.ago.to_s :db %>
+  updated_at: <%= 3.months.ago.to_s :db %>
+mycomicshop:
+  id: 5
+  profile_id: 3
+  title: mycomicshop
+  trust_root: http://mycomicshop.com
+  expires_at: <%= 1.month.ago.to_s :db %>
+  created_at: <%= 1.year.ago.to_s :db %>
+  updated_at: <%= 1.year.ago.to_s :db %>
+past_expiration:
+  id: 6
+  profile_id: 4
+  title: Finish before you start
+  trust_root: http://earlytimer.com
+  expires_at: <%= 2.minutes.ago.to_s :db %>
+  created_at: <%= 5.minute.ago.to_s :db %>
+  updated_at: <%= 1.minute.ago.to_s :db %>

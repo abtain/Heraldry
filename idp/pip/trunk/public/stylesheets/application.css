@@ -1,0 +1,1394 @@
+/* Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+   
+     http://www.apache.org/licenses/LICENSE-2.0
+   
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License. */
+
+/* CSS Document */
+
+div, span, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font: 12px Verdana, Arial, Helvetica, sans-serif;
+  background-image: url(/images/background.gif); 
+  background-repeat: repeat-x;
+  background-color: #fff;
+}
+
+.spacer { clear: both; }
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+#left {
+  margin: auto;
+  padding: 0;
+  width: 900px;
+  height: 100%;
+  text-align: left;
+}
+
+#hdr {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 142px;
+  width: 900px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.spacer {
+  clear: both;
+}
+
+
+/* Main Styles */
+
+#main {
+  position: relative;
+  padding: 0;
+  margin: 0 60px;
+  min-height: 450px;
+}
+
+/* Footer Styles */
+
+#footer {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  margin-top: 60px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Header 
+ -----------------------------------------------------------------------------------------------------------*/
+
+#header-loginlock {
+  position: absolute;
+  top: 0;
+  left: 560px;
+  z-index: 25;
+}
+
+#header-loggedin {
+  position: absolute;
+  left: 85px;
+  top: 2px;
+  color: #666666;
+  visibility: visible;
+}
+
+#header-company {
+  position: absolute;
+  left: 745px;
+  height: 20px;
+  visibility: visible;
+}
+
+#header-login {
+  position: absolute;
+  left: 719px;
+  top: 49px;
+  visibility: visible;
+}
+
+#header-logo {
+  position: absolute;
+  left: 40px;
+  top: 50px;
+  visibility: visible;
+}
+
+#header-tagline {
+  position: absolute;
+  left: 319px;
+  top: 89px;
+}
+
+#header-navigation {
+  position: absolute;
+  left: 232px;
+  top: 113px;
+  visibility: visible;
+}
+
+#header-navigation a,
+#header-navigation a:visited {
+  width:99px;
+  height:30px;
+  margin-right:4px;
+  display:block;
+  float:left;
+  background-repeat:no-repeat;
+  text-indent:-9000px;
+}
+
+#header-navigation a,
+#header-navigation a:visited,
+#header-navigation a:active,
+#header-navigation a:hover {
+  text-decoration:none;
+}
+
+#header-navigation a:hover {
+  background-position:0 -30px;
+}
+
+#header-navigation a.selected,
+#header-navigation a.selected:visited,
+#header-navigation a.selected:active,
+#header-navigation a.selected:hover {
+  background-position:0 -60px;
+}
+
+#nav-my-account,
+#nav-trusted-ids,
+#nav-trusted-profiles {
+  width:99px;
+}
+
+#nav-my-account {
+  background-image: url(/images/navigation/account.gif);
+}
+
+#nav-my-profile {
+  background-image: url(/images/navigation/profile.gif);
+}
+
+#nav-trusted-ids {
+  background-image: url(/images/navigation/trusted.gif);
+}
+
+#nav-trusted-profiles {
+  background-image: url(/images/navigation/trust.gif);
+}
+
+#nav-activity {
+  background-image: url(/images/navigation/activity.gif);
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Tooltip (qTip) Elements 
+ -----------------------------------------------------------------------------------------------------------*/
+
+.rbroundbox {
+  background: url(/images/tooltip/background.gif) repeat;
+}
+
+.rbtop div {
+  background: url(/images/tooltip/tl.gif) no-repeat top left; 
+}
+
+.rbtop {
+  background: url(/images/tooltip/tr.gif) no-repeat top right;
+}
+
+.rbbot div {
+  background: url(/images/tooltip/bl.gif) no-repeat bottom left;
+}
+.rbbot { 
+  background: url(/images/tooltip/br.gif) no-repeat bottom right;
+}
+
+.rbox-top div, .rbox-top, .rbox-bot div, .rbox-bot {
+  width: 160px;
+  height: 7px;
+  font-size: 1px;
+}
+
+.rbox-content { padding: 5px; }
+.rbox-roundbox { width: 300px; }
+
+.rbox-roundbox { 
+  background: url(/images/tooltip/background.gif) repeat;
+}
+.rbox-top div { 
+  background: url(/images/tooltip/tl.gif) no-repeat top left; 
+}
+.rbox-top {
+  background: url(/images/tooltip/tr.gif) no-repeat top right;
+}
+.rbox-bot div { 
+  background: url(/images/tooltip/bl.gif) no-repeat bottom left;
+}
+.rbox-bot { 
+  background: url(/images/tooltip/br.gif) no-repeat bottom right;
+}
+
+.rbtop div, .rbtop, .rbbot div, .rbbot {
+  height: 7px;
+  font-size: 1px;
+}
+
+.rbcontent {
+  padding: 5px;
+  width: 160px;
+}
+
+.rbroundbox {
+  width: 170px;
+}
+
+.rbroundbox2 { 
+  background: url(/images/tooltip/background.gif) repeat;
+}
+
+/* Round Box elements for My Profile area -- E-mail not verified -- */
+.rbroundbox3 { 
+  background: url(/images/tooltip/background.gif) repeat;
+  width: 530px;
+}
+.rbtop3 div { 
+  background: url(/images/tooltip/tl.gif) no-repeat top left; 
+}
+.rbtop3 {
+  background: url(/images/tooltip/tr.gif) no-repeat top right;
+}
+.rbbot3 div { 
+  background: url(/images/tooltip/bl.gif) no-repeat bottom left;
+}
+.rbbot3 { 
+  background: url(/images/tooltip/br.gif) no-repeat bottom right;
+}
+.rbtop3 div, .rbtop3, .rbbot3 div, .rbbot3 {
+  width: 530px;
+  height: 7px;
+  font-size: 1px;
+}
+.rbcontent3 {
+  margin: 5px;
+}
+/*------------------------------------------------------------------------------------------------------------
+ Home Page Elements 
+ -----------------------------------------------------------------------------------------------------------*/
+
+#title, .title {
+  position: relative;
+  left: 34px;
+  width: 410px;
+  font-size: 18px;
+  color: #000000;
+}
+
+#create_acct {
+  position: absolute;
+  left: 590px;
+  top: 10px;
+}
+
+#questions, .questions {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ul.home {
+  float: left;
+  padding-left: 45px;
+  margin-left: 0;
+  margin-top: -15px;
+}
+
+ul.home li {
+  list-style-image: url(/images/home_li.gif);
+  font-size: 12px;
+  font-weight: bold;
+  color: #333333;
+  line-height: 20px;
+  width: 275px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Global Elements 
+ -----------------------------------------------------------------------------------------------------------*/
+
+#pagebody {
+  position: relative;
+  margin: 0 60px;
+  min-height: 450px;
+}
+
+#flash {
+  display: block;
+  position: relative;
+  width: 700px;
+  margin-left: 40px;
+}
+
+.gradient {
+  margin: 0;
+  padding: 30px 0 0 0;
+  background: url(/images/gradient_arch.gif) no-repeat top;
+}
+
+.gradient table {
+  text-align: center;
+}
+
+.gradient_arch {
+  position: relative;
+}
+
+hr {
+  position: relative;
+  width: 680px;
+  height: 1px;
+  border: 0;
+  color: #E0E0E0;
+  background-color: #E0E0E0;
+}
+
+h1.pagebody {
+  font-weight:normal;
+  font-size: 30px;
+  margin: 30px 0 0 0;
+}
+  
+h2.pagebody {
+  font-weight:normal;
+  font-size: 16px;
+  margin: 30px 0 0 0;
+}
+
+h3.pagebody {
+  position: relative;
+  font-weight:normal;
+  font-size: 24px;
+  margin: 0 0 0 40px;
+}
+
+#pagebody-idimage {
+  float:right;
+  margin-right: 40px;
+}
+
+#pagebody-idimagetext {
+  position: absolute;
+  left: 380px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666666;
+  width: 200px;
+}
+
+#pagebody-text {
+  position: relative;
+  width: 650px;
+  left: 40px;
+  top: -25px;
+}
+
+span.highlighted, a{
+  color: #FF6600;
+  text-decoration: none;
+}
+
+span.colored {
+  color: #589EB1;
+}
+
+a:hover{
+  color: #FF6600;
+  text-decoration: underline;
+}
+
+img { border-width:0; }
+
+table td {
+  margin: 0;
+}
+
+th {
+  padding: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #589EB1;
+}
+
+th.activity {
+  padding: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  color: #589EB1;
+}
+
+th.activity a{
+  color: #FF6600;
+  text-decoration: none;
+}
+
+th a:hover{
+  color: #589EB1;
+  text-decoration: none;
+}
+
+tr.even td, td.even {
+  padding: 3px;
+  background-color: #F4F0DF;
+  line-height: 22px;
+}
+
+tr.odd td, td.odd {
+  padding: 3px;
+  background-color: #FFFFFF;
+  line-height: 22px;
+}
+
+.layerwin_hidden { 
+  display: none;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Forgot your Account Information 
+ -----------------------------------------------------------------------------------------------------------*/
+
+label.forgot{
+  display: block;
+  float: left;
+  width: 160px;
+  font-size: 20px;
+}
+
+input.forgot{
+  width: 200px;
+  background-color: #F4F0DF;
+  border: 0px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+input.forgot:focus{
+  background-color: #E9F4F8;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------
+ Create an Account Information 
+ -----------------------------------------------------------------------------------------------------------*/
+
+label.createacct{
+  display: block;
+  float: left;
+  width: 200px;
+  font-size: 20px;
+}
+
+input.createacct{
+  width: 200px;
+  background-color: #F4F0DF;
+  border: 0px;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  padding: 3px;
+}
+
+input.createacct:focus{
+  background-color: #E9F4F8;
+}
+
+.error{
+  color: #CC0000;
+  font-weight: bold;
+  padding-left: 10px;
+  vertical-align: super;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------
+ Set up Account Information 
+ -----------------------------------------------------------------------------------------------------------*/
+#steps, .steps {
+  position: relative;
+  left: 40px;
+  width: 800px;
+}
+#step1, .step1 {
+  position: relative;
+  top: 30px;
+  float: left;
+  width: 225px;
+}
+
+#step2, .step2 {
+  position: absolute;
+  top: 30px;
+  float: left;
+  left: 255px;
+  width: 210px;
+}
+
+#step3, .step3 {
+  position: absolute;
+  top: 30px;
+  float: left;
+  left: 465px;
+  width: 225px;
+}
+
+#steps-title, .steps-title {
+  font-size: 18px;
+  color: #3A8DA3;
+}
+
+input.browse{ 
+  border: none;
+  width: 125px;
+  background-color: #F4F0DF;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+input.browse:focus{
+  background-color: #E9F4F8;
+}
+
+#e-mail, .e-mail {
+  color: #FF6600;
+  font-size: 18px;
+}
+
+#entry1, .entry1 {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  width: 800px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ My Account 
+ -----------------------------------------------------------------------------------------------------------*/
+
+#noinput, .noinput {
+  background-color: #FFFFFF;
+  border: 0px;
+  padding-top: 5px;
+  height: 0px;
+}
+
+label.myacct{
+  position: relative;
+  display: block;
+  float: left;
+  width: 200px;
+  font-size: 20px;
+}
+
+label.reset_password {
+  position: relative;
+  display: block;
+  float: left;
+  width: 400px;
+  font-size: 20px;  
+}
+
+input.myacct{
+  width: 200px;
+  background-color: #F4F0DF;
+  border: 0px;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  padding-left: 2px;
+}
+
+input.myacct:focus{
+  background-color: #E9F4F8;
+}
+
+#sidebar, .sidebar {
+  position: absolute;
+  top: 0px;
+  left: 450px;
+  width: 185px;
+}
+
+div#remove-image {
+  position: absolute;
+  left: 450px;
+  width:185px;
+  top: 175px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ My Profile 
+ -----------------------------------------------------------------------------------------------------------*/
+.not-verified {
+  position: relative;
+  width: 560px;
+  margin: 0;
+  padding: 0;
+} 
+
+.not-verified h1 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: #3A8DA3;
+  font-size: 16px;
+}
+
+.not-verified h2 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: #FF6600;
+  font-size: 16px;
+}
+
+h1.profile {
+  display: inline;
+  position: relative;
+  font-size: 16px;
+  color: #3A8DA3;
+  font-weight: normal;
+}
+
+h2.profile {
+  display: inline;
+  position: relative;
+  padding-left: 0;
+  top: -40px;
+  font-size: 20px;
+}
+
+h2.category {
+  display: inline;
+  position: relative;
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: normal;
+  margin-left: 40px;
+}
+
+h2.category a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h2.category a:hover {
+  color: #3A8DA3;
+  text-decoration: none;
+}
+
+.edit-icon {
+  position: relative;
+  margin-top: -15px;
+}
+
+h2.profile a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h2.profile a:hover {
+  color: #3A8DA3;
+  text-decoration: none;
+}
+
+.expand {
+  float: right;
+  padding-right: 30px;
+  margin-top: -5px;
+}
+
+h3.profile {
+  position: relative;
+  left: 40px;
+  top: -20px;
+  font-size: 20px;
+  color: #3A8DA3;
+}
+
+h4.profiles {
+  position: relative;
+  left: 173px;
+  font-size: 15px;
+  color: #3A8DA3;
+  line-height: 25px;
+}
+
+#form, .form {
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.labelprofile{
+  display: inline;
+  line-height: 27px;
+  margin-left: 15px;
+  color: #666666;
+  width: 200px;
+}
+
+
+#profile-active, .profile-active {
+  position: absolute;
+  left: 300px;
+  border: none;
+  color: #000000;
+  background-color: #F4F0DF;
+  padding: 3px;
+  width: 250px;
+}
+
+#profile-addlabel, .profile-addlabel {
+  position: relative;
+  left: 45px;
+  border: none;
+  color: #000000;
+  background-color: #F4F0DF;
+  padding: 0 3px 3px 3px;
+  width: 100px;
+  margin-top: 7px;
+}
+
+.property-type-title-form input[type='text'] {
+  border: none;
+  color: #000000;
+  background-color: #F4F0DF;
+  width: 100px;
+}
+
+.property-type-title-form input[type='button'] {
+  padding: 0;
+}
+
+.sub-category-title-form input[type='text'] {
+  position: absolute;
+  left: 300px;
+  border: none;
+  color: #000000;
+  padding: 3px;
+  width: 250px;
+  background-color: #F4F0DF;
+}
+
+.sub-category-title-form input.editor_ok_button {
+  position: absolute;
+  left: 580px;
+  margin-top: 3px;
+}
+
+.sub-category-title-form a.editor_cancel {
+  position: absolute;
+  left: 600px;
+  margin-top: 3px;
+}
+
+#profile-addinput, .profile-addinput {
+  position: absolute;
+  left: 173px;
+  border: none;
+  color: #000000;
+  background-color: #F4F0DF;
+  padding: 3px;
+  width: 250px;
+  margin-top: 7px;
+}
+
+#profile-addcategory, .profile-addcategory {
+  position: relative;
+  left: 173px;
+  border: none;
+  color: #000000;
+  background-color: #F4F0DF;
+  padding: 3px;
+  width: 250px;
+  font-size: 15px;
+}
+
+
+#pagebody-text input:focus {
+  background-color: #E9F4F8;
+}
+
+
+.profile-active-edit {
+  position: absolute;
+  left: 300px;
+  border: none;
+  color: #000000;
+  padding: 3px;
+  width: 250px;
+  background-color: #E9F4F8;
+}
+
+#addfield, .addfield {
+  position: relative;
+  left: 450px;
+}
+
+.help-icon {
+  position: absolute;
+  left: 560px;
+}
+
+.collapse-small {
+  position: absolute;
+  left: 560px;
+  margin-top: 7px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Trusted IDs 
+ -----------------------------------------------------------------------------------------------------------*/
+h1.trusted {
+  margin: 30px 0 0 0;
+  font-size: 16px;
+  font-weight:normal;
+  width: 530px;
+}
+
+#profile-link { 
+  margin:10px 0;
+}
+
+h1.ecommerce {
+  font-size: 22px;
+  font-weight:normal;
+}
+
+h2.ecommerce {
+  font-size: 16px;
+  font-weight:normal;
+}
+
+h1.trust {
+  font-size: 14px;
+  font-weight:normal;
+}
+
+#trust-name, .trust-name {
+  position: relative;
+  border: none;
+  color: #000000;
+  background-color: #F4F0DF;
+  padding: 3px;
+  width: 250px;
+  font-size: 15px;
+}
+
+#trust-name:focus, .trust-name:focus {
+  background-color: #E9F4F8;
+}
+
+#trust-profile, .trust-profile {
+  position: relative;
+  left: 50px;
+  border: none;
+  color: #000;
+  background-color: #F4F0DF;
+  padding: 3px;
+  width: 250px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ About PIP(tm) 
+ -----------------------------------------------------------------------------------------------------------*/
+
+h2.about {
+  display: inline;
+  position: relative;
+  font-weight: normal;
+  left: 30px;
+  top: -40px;
+  width: 170px;
+  font-size: 16px;
+  color: #999;
+}
+
+.about-text {
+  position: relative;
+  width: 480px;
+  left: 240px;
+  top: -55px;
+  color: #333;
+}
+
+form .frm_txt input,
+form textarea {
+  background-color: #F4F0DF;
+  border: 0px;
+  font-size: 20px;
+}
+
+form .frm_txt input:focus,
+form textarea:focus {
+  background-color: #E9F4F8;
+}
+
+/* TRUST FORM */
+.trusts-name-cell,
+.trusts-profile-cell,
+.trusts-web-cell {
+  width:140px;
+  text-align:left;
+}
+
+.trusts-expires-cell,
+.trusts-action-cell {
+  width:100px;
+  text-align:center;
+}
+
+.trusts-action-cell {
+  width: 150px;
+}
+
+/* PERSONA FORM */
+.profiles-name-cell {
+  width:200px;
+  text-align:left;
+}
+
+.profiles-desc-cell {
+  width:220px;
+  text-align:left;
+}
+
+.profiles-action-cell {
+  width:150px;
+  text-align:center;
+}
+
+#profile-form #profile_description {
+  height:100px;
+}
+
+#profile-form .frm_txt input,
+#profile-form textarea {
+  width:400px;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Footer 
+ -----------------------------------------------------------------------------------------------------------*/
+
+#footer-blue {
+  position: relative;
+  background-color: #9BCEDB;
+  height: 10px;
+}
+
+#footer-gray {
+  position: relative;
+  background-color: #F2F2F2;
+  height: 45px;
+  text-align: center;
+  padding-top: 6px;
+  font-size: 11px;
+  line-height: 17px;
+  color: #000;
+}
+
+#footer-gray a{
+  color: #333333;
+  text-decoration: none;
+}
+
+#footer-gray a:hover{
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------------------------------------------------------------
+ Login Pop-up Box 
+ -----------------------------------------------------------------------------------------------------------*/
+
+#login {
+  position: absolute;
+  top: 0;
+  left: 400px;
+  color: #FFFFFF; 
+  background-color: #3A8DA3; 
+  width: 275px; 
+  height: 181px;
+  z-index: 20;
+}
+
+#login-title, .login-title {
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 30px;
+  left: 25px;
+  top: 5px;
+}
+
+#login-close, .login-close {
+  position: absolute;
+  left: 250px;
+  top: 5px;
+}
+
+#login-forgot, .login-forgot {
+  position: absolute;
+  color: #BDDFE8;
+  font-size: 12px;
+  left: 25px;
+  top: 140px;
+}
+
+#login label {
+  position: relative;
+  display: block;
+  float: left;
+  left: 25px;
+  top: 55px;
+  width: 65px;
+  font-size: 12px;
+}
+
+#login input.input {
+  position: relative;
+  left: 30px;
+  top: 53px;
+  width: 130px;
+  margin-bottom: 5px;
+  background-color: #F4F0DF;
+  border: 0px;
+}
+
+#login input.submit {
+  position: relative;
+  left: 94px;
+  top: 53px;
+}
+
+#login input:focus {
+  background-color: #FFFFFF;
+}
+
+#login-roundbottomleft {
+  position: absolute;
+  left: 0px;
+  top: 162px;
+}
+
+#login-roundbottomright {
+  position: absolute;
+  left: 253px;
+  top: 162px;
+}
+
+#dialog {
+  background-color: #000;
+}
+
+#dialog_box {
+  width:500px;
+  padding:30px;
+  background-color:#fff;
+  border:5px solid #000;
+}
+
+.property-set {
+  width: 536px;
+}
+
+
+
+.rbroundbox {
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+}
+
+#profile-add-category {
+  float: right;
+  margin-right: -88px;
+  margin-top: 85px;
+}
+
+.profile-row {
+  display: block;
+  line-height: 27px;
+}
+
+.profile-row label, .profile-row input.profile-title {
+  float: left;
+  color: #666;
+  width: 104px;
+}
+
+.profile-row label {
+ padding-left: 3px;
+ padding-right: 3px;
+ width: 106px;
+}
+
+.profile-row input.profile-title, .profile-row input.category-title, .profile-row input.profile-field, .profile-row select {
+  border: none;
+  color: #000;
+  background-color: #F4F0DF;
+  padding: 3px;
+}
+
+.category-row {
+  margin-top: 20px;
+}
+
+.xcheckbox {
+  position: relative;
+  margin-bottom: 5px;
+  vertical-align: bottom;
+}
+
+.profile-row input.checkbox {
+  float: left;
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 20px;
+}
+
+.trust-profile-category-set h4.profile {
+  margin-left: 150px;
+}
+
+.trust-profile-category-set input.profile-save {
+  margin-left: 190px;
+}
+
+.profile-row .profile-field {
+  float: left;
+  width: 250px;
+  margin-left: 15px;
+}
+
+.profile-row select.profile-field {
+  width: 255px;
+}
+
+.profile-row .category-title {
+  font-weight: normal;
+  margin-left: 40px;
+}
+
+.category-row .profile-row .category-title {
+  float: left;
+  width: 250px;
+  margin-left: 125px;
+}
+
+.gradient-arch .profile-row {
+}
+
+.gradient-arch .profile-row .category-title {
+}
+
+.profile-row .add-category {
+  float: left;
+  margin-left: 400px;
+}
+
+.profile-row .add-field {
+  margin-left: 5px;
+}
+
+.profile-row .help {
+  margin-left: 5px;
+}
+
+.outer-property-set .add-sub-category {
+  float: left;
+  margin-left: 411px;
+}
+
+.outer-property-set {
+  margin: 0 40px 20px 40px;
+  border: 1px solid #fff;
+}
+
+input.profile-save {
+  float: left;
+  margin-left: 125px;
+}
+
+.inner-form {
+  margin-left: 40px;
+}
+
+#pagebody .help {
+  float: left;
+  margin-left: 5px;
+  padding-top: 5px;
+}
+
+.delete-icon {
+  float: left;
+  margin-left: 5px;
+  width: 16px;
+}
+
+.delete-icon img, img.delete-icon {
+  padding-top: 5px;
+}
+
+.gradient-arch .delete-icon {
+  display: inline;
+  position: relative;
+  padding-left: 0;
+  top: -20px;
+}
+
+.question-mark {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  height: 22px;
+}
+
+.tooltip img {
+  margin: 0;
+  padding: 0;
+}
+
+.profile-row h2.profile {
+  left: 0;
+  display:inline;
+}
+
+h2.profile a {
+  color: #000;
+}
+
+.gradient-arch {
+  background: url(/images/gradient_arch.gif) no-repeat top;
+  height: 70px;
+  padding-top: 20px;
+}
+
+h2.profile {
+  font-size: 20px;
+  font-family: verdana;
+  font-weight: normal;
+}
+
+h4.profile {
+  display: inline;
+  margin-left: 125px;
+  font-size: 15px;
+  color: #3A8DA3;
+  line-height: 25px;
+  font-weight: normal;
+}
+
+#login-form label {
+  text-align: left;
+}
+
+.profile-disabled .profile-row input.profile-field, .profile-disabled .profile-row input.category-title, .profile-disabled .profile-row input.profile-title {
+  background-color: #000;
+}
+
+.profile-row input[type="text"].profile-enabled {
+  border: none;
+  color: #000;
+  background-color: #E9F4F8;
+  padding: 3px;
+}
+
+.profile-row input.profile-enabled {
+  border: none;
+  color: #000;
+  background-color: #E9F4F8;
+  padding: 3px;
+}
+
+.profile-enabled .profile-row input.profile-field, .profile-enabled .profile-row select.profile-field, .profile-enabled .profile-row div.profile-field select, .profile-enabled .profile-row input.category-title, .profile-enabled .profile-row input.profile-title {
+  border: none;
+  color: #000;
+  background-color: #E9F4F8;
+  padding: 3px;
+}
+
+#profiles, #ledgers, #trusts, .pagebody-text {
+  width: 690px;
+  margin-left: 40px;
+  margin-top: 20px;
+  /*margin-top: -40px;*/
+  z-index: 10;
+}
+
+#profiles th, #ledgers th, #trusts th {
+  color: #FF6600;
+  font-weight: normal;
+}
+
+h1.ledger {
+  margin-left: 40px;
+}
+
+div.profile-member {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.profile-member label {
+  position: relative;
+  float: left;
+  width: 250px;
+  font-size: 16px;
+}
+
+.page-head {
+  display: block;
+  margin-left: 40px;
+}
+
+.new-property-set {
+}
+
+#pagebody-text p {
+  padding: 2px 0;
+}
+
+#pagebody-text h3 {
+  margin: 10px 0;
+}
+
+#pagebody-text ul.terms, #pagebody-text ol.terms {
+  margin: 10px 0 10px 0;
+  padding-left: 35px;
+}
+
+#pagebody-text ul.terms, #pagebody-text ol.terms, #pagebody-text ul.terms h3, #pagebody-text ol.terms h3 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#pagebody-text ul.terms li span, #pagebody-text ol.terms li span {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+
+.errorExplanation h2 {
+  font-weight: normal;
+}
+
+.errorExplanation ul {
+  margin-left: 20px;
+}
+
